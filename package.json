@@ -4,7 +4,7 @@
   "description": "sendIt",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "./node_modules/.bin/mocha --require @babel/register ./tests/*.js",
     "prestart": "npm run build",
     "start": "node build/server.js",
     "build": "babel server --out-dir build",
@@ -34,9 +34,13 @@
     "@babel/node": "^7.0.0",
     "@babel/plugin-syntax-object-rest-spread": "^7.0.0",
     "@babel/preset-env": "^7.1.5",
+    "@babel/register": "^7.0.0",
+    "chai": "^4.2.0",
+    "chai-http": "^4.2.0",
     "eslint": "^5.9.0",
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-plugin-import": "^2.14.0",
+    "mocha": "^5.2.0",
     "nodemon": "^1.18.6"
   }
 }

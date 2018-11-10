@@ -1,0 +1,46 @@
+{
+  "name": "send-it",
+  "version": "1.0.0",
+  "description": "sendIt",
+  "main": "index.js",
+  "scripts": {
+    "test": "./node_modules/.bin/mocha --require @babel/register ./tests/*.js",
+    "prestart": "npm run build",
+    "start": "node build/server.js",
+    "build": "babel server --out-dir build",
+    "start:dev": "npm run lint && nodemon --exec babel-node ./server/server.js",
+    "lint": "eslint ./server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andela-oakinseye/send-it.git"
+  },
+  "keywords": [],
+  "author": "Olawale Akinseye <brainyfarm@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/andela-oakinseye/send-it/issues"
+  },
+  "homepage": "https://github.com/andela-oakinseye/send-it#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^6.1.0",
+    "express": "^4.16.4",
+    "morgan": "^1.9.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.1.5",
+    "@babel/core": "^7.1.5",
+    "@babel/node": "^7.0.0",
+    "@babel/plugin-syntax-object-rest-spread": "^7.0.0",
+    "@babel/preset-env": "^7.1.5",
+    "@babel/register": "^7.0.0",
+    "chai": "^4.2.0",
+    "chai-http": "^4.2.0",
+    "eslint": "^5.9.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "mocha": "^5.2.0",
+    "nodemon": "^1.18.6"
+  }
+}
